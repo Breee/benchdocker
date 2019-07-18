@@ -1,0 +1,14 @@
+version: '2.4'
+services:
+  benchexec:
+    container_name: benchexec
+    build:
+      context: .
+    command: bash run_benchmark.sh
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+      - ./input:/input
+      - ./output:/output
+      - /home/bree/repos/ultimate:/ultimate
+      - ./run_benchmark.sh:/usr/src/app/run_benchmark.sh
+    
