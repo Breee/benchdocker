@@ -5,10 +5,11 @@ services:
     build:
       context: .
     command: bash run_benchmark.sh
+    mem_limit: 8G
+    memswap_limit: 8G
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
       - ./input:/input
       - ./output:/output
-      - /home/bree/repos/ultimate:/ultimate
       - ./run_benchmark.sh:/usr/src/app/run_benchmark.sh
     
